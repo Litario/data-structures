@@ -1,3 +1,6 @@
+from data.constants import NONCOLOR, YELLOW
+
+
 class Node:
     """Класс для узла стека"""
 
@@ -15,14 +18,23 @@ class Stack:
     """Класс для стека"""
 
     stack_list = []
+    stack_data_list = []
 
     def __init__(self):
         """Конструктор класса Stack"""
         self.top = None
         self.size = 0
 
+    def __str__(self):
+        return '\n'.join(Stack.stack_data_list)
+
     def __repr__(self):
-        return f"Длина списка стэка {str(self.size)}"
+        str_start = f"{YELLOW}Start __str__\n"
+        str_main = "\n".join([str(j.data) for j in Stack.stack_list])
+        str_end = f"\nEnd __str__{NONCOLOR}"
+        str_string = str_start + str_main + str_end
+        return str_string
+        # return f"{str(self.__class__.__name__)}  {self.top.data}"
 
     def __len__(self):
         return len(Stack.stack_list)
@@ -38,6 +50,7 @@ class Stack:
         self.top = node
         self.size += 1
         Stack.stack_list.append(self.top)
+        Stack.stack_data_list.append(data)
 
     def pop(self):
         """

@@ -16,6 +16,10 @@ def test__stack_init():
     assert obj_stack.size == 0
 
 
+def test__stack_str_start():
+    assert str(obj_stack) == ""
+
+
 def test__stack_push():
     obj_stack.push("data_1")
     assert isinstance(obj_stack.top, Node)
@@ -26,6 +30,10 @@ def test__stack_push():
     assert isinstance(obj_stack.top, Node)
     assert obj_stack.top.data == "data_2"
     assert obj_stack.size == 2
+
+
+def test__stack_str():
+    assert str(obj_stack) == "data_1\ndata_2"
 
 
 def test__stack_pop():
