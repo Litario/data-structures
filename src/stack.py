@@ -16,7 +16,6 @@ class Node:
 
 class Stack:
     """Класс для стека"""
-
     stack_list = []
     stack_data_list = []
 
