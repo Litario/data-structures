@@ -6,14 +6,14 @@ node = Node(None)
 queue = Queue()
 
 
-## ____________________________________________________tests for Node
+## ____________________________________________tests for Node
 def test__node_init():
     assert isinstance(node, Node)
     assert node.data is None
     assert node.next_node is None
 
 
-## ______________________________________________tests for LinkedList
+## ___________________________________________tests for Queue
 def test__queue_init():
     assert isinstance(queue, Queue)
     assert queue.head is None
